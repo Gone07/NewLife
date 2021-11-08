@@ -28,7 +28,7 @@ class StoreController extends Controller
         $store->numberOfItems = $request->numberOfItems;
         if($store->save())
         {
-            return new StoreResource($store);
+            return response()->json($store, 201);
         }
     }
 
@@ -61,7 +61,7 @@ class StoreController extends Controller
         $store = Store::findOrFail($id);
         if($store->delete())
         {
-            return new StoreResource($store);
+            return response()->json($store, 204);
         }
     }
 }

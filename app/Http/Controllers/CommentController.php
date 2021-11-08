@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\CommentResource;
 use App\Models\Comment;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\Collection;
 
@@ -28,7 +29,7 @@ class CommentController extends Controller
         $comments->text = $request->text;
         if($comments->save())
         {
-            return new CommentResource($comments);
+            return response()->json($comments, 201);
         }
     }
 
@@ -59,7 +60,7 @@ class CommentController extends Controller
         $comments = Comment::findOrFail($id);
         if($comments->delete())
         {
-            return new CommentResource($comments);
+            return response()->json($comments, 204);
         }
     }
 }

@@ -27,7 +27,7 @@ class ItemController extends Controller
         $items->weight = $request->weight;
         if($items->save())
         {
-            return new ItemResource($items);
+            return response()->json($items, 201);
         }
     }
 
@@ -59,7 +59,7 @@ class ItemController extends Controller
         $items = Item::findOrFail($id);
         if($items->delete())
         {
-            return new ItemResource($items);
+            return response()->json($items, 204);
         }
     }
 }
