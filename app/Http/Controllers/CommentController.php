@@ -11,6 +11,11 @@ use phpDocumentor\Reflection\Types\Collection;
 class CommentController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware(['auth:api', 'admin'])->only(['index', 'store']);
+    }
+
     public function index()
     {
         $comments = Comment::paginate(10);

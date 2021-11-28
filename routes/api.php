@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\PostController;
@@ -21,6 +22,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('register', [AuthController::class, 'register']);
+Route::post('login', [AuthController::class, 'login'])->name('login');
+Route::post('refresh', [AuthController::class, 'refreshToken']);
+Route::post('logout', [AuthController::class, 'logout'])->middleware('auth:api');
 
 //Post API
 Route::get('/posts', [PostController::class,'index']);
@@ -44,7 +50,7 @@ Route::put('/items/{id}',[ItemController::class,'update']);
 Route::delete('/items/{id}',[ItemController::class,'destroy']);
 
 //Comment API
-Route::get('/comments',[CommentController::class,'index']);
+Route::get('/comments',[CommentController::class,'index'])->middleware('auth:api');
 Route::post('/comment',[CommentController::class,'store']);
 Route::get('/comments/{id}',[CommentController::class,'show']);
 Route::put('/comments/{id}',[CommentController::class,'update']);
