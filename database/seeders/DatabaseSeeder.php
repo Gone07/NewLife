@@ -13,7 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
 
         \App\Models\Post::factory(20)->create();
 
@@ -22,5 +21,9 @@ class DatabaseSeeder extends Seeder
         \App\Models\Item::factory(20)->create();
 
         \App\Models\Comment::factory(20)->create();
+
+        $this->call([
+            UsersSeeder::class
+            ]);
     }
 }
