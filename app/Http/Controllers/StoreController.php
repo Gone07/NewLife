@@ -10,7 +10,7 @@ class StoreController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth:api', 'admin'])->only(['destroy']);
+        $this->middleware(['auth:api', 'admin'])->only(['destroy', 'store', 'update']);
     }
 
 
