@@ -13,7 +13,7 @@ class CommentController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth:api', 'admin'])->only(['index', 'store']);
+        $this->middleware(['auth:api', 'admin'])->only(['destroy']);
     }
 
     public function index()

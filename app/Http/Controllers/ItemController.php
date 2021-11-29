@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth:api', 'admin'])->only(['destroy']);
+    }
+
+
     public function index()
     {
         $items = Item::paginate(10);

@@ -35,23 +35,23 @@ Route::get('/posts/{id}', [PostController::class,'show']);
 Route::put('/posts/{id}', [PostController::class,'update']);
 Route::delete('/posts/{id}', [PostController::class,'destroy']);
 
-//Store API
+//Stores API
 Route::get('/stores',[StoreController::class,'index']);
-Route::post('/store',[StoreController::class,'store']);
-Route::get('/stores/{id}',[StoreController::class,'show']);
-Route::put('/stores/{id}',[StoreController::class,'update']);
+Route::post('/store',[StoreController::class,'store'])->middleware('auth:api');
+Route::get('/stores/{id}',[StoreController::class,'show'])->middleware('auth:api');
+Route::put('/stores/{id}',[StoreController::class,'update'])->middleware('auth:api');
 Route::delete('/stores/{id}',[StoreController::class,'destroy']);
 
-//Item API
+//Items API
 Route::get('/items',[ItemController::class,'index']);
-Route::post('/item',[ItemController::class,'store']);
-Route::get('/items/{id}',[ItemController::class,'show']);
-Route::put('/items/{id}',[ItemController::class,'update']);
+Route::post('/item',[ItemController::class,'store'])->middleware('auth:api');
+Route::get('/items/{id}',[ItemController::class,'show'])->middleware('auth:api');
+Route::put('/items/{id}',[ItemController::class,'update'])->middleware('auth:api');
 Route::delete('/items/{id}',[ItemController::class,'destroy']);
 
-//Comment API
-Route::get('/comments',[CommentController::class,'index'])->middleware('auth:api');
-Route::post('/comment',[CommentController::class,'store']);
-Route::get('/comments/{id}',[CommentController::class,'show']);
-Route::put('/comments/{id}',[CommentController::class,'update']);
+//Comments API
+Route::get('/comments',[CommentController::class,'index']);
+Route::post('/comment',[CommentController::class,'store'])->middleware('auth:api');
+Route::get('/comments/{id}',[CommentController::class,'show'])->middleware('auth:api');
+Route::put('/comments/{id}',[CommentController::class,'update'])->middleware('auth:api');
 Route::delete('/comments/{id}',[CommentController::class,'destroy']);

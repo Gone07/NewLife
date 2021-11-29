@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class StoreController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth:api', 'admin'])->only(['destroy']);
+    }
+
+
     public function index()
     {
         $stores = Store::paginate(10);
