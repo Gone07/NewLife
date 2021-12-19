@@ -33,7 +33,7 @@ class UsersSeeder extends Seeder
         ];
 
         foreach ($users as $user){
-            User::firstOrCreate($user,[                'password' => bcrypt('secret')
+            User::firstOrCreate($user,['password' => bcrypt('secret')
             ]);
         }
     }
