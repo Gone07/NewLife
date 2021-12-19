@@ -16,8 +16,10 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->double('price');
+            $table->string('condition');
             $table->double('weight');
+            $table->foreignId('store_id')->nullable()->constrained('stores');
+            $table->foreignId('user_id')->nullable()->constrained('users');
             $table->timestamps();
         });
     }

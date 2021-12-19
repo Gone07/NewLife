@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreRequest;
 use App\Http\Resources\StoreResource;
 use App\Models\Store;
 use Illuminate\Http\Request;
@@ -19,13 +20,14 @@ class StoreController extends Controller
         $stores = Store::paginate(10);
         return StoreResource::collection($stores);
     }
-
-    public function create()
+    public function indexAll()
     {
-        //
+        $stores = Store::all();
+        return StoreResource::collection($stores);
     }
 
-    public function store(Request $request)
+
+    public function store(StoreRequest $request)
     {
         $store = new Store();
         $store->name = $request->name;
@@ -44,12 +46,7 @@ class StoreController extends Controller
         return new StoreResource($store);
     }
 
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
+    public function update(StoreRequest $request, $id)
     {
         $store = Store::findOrFail($id);
         $store->name = $request->name;

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +12,7 @@ use GuzzleHttp\Client;
 
 class AuthController extends Controller
 {
-    public function register(Request $request)
+    public function register(RegisterRequest $request)
     {
         return User::create([
             'name' => $request->input('name'),
@@ -28,6 +29,12 @@ class AuthController extends Controller
         } else {
             return response()->json(['error' => 'Unauthorised'], 401);
         }
+    }
+
+    public function isAdmin()
+    {
+
+        return response()->json(!!Auth::user()->is_admin);
     }
 
     public function getTokenAndRefreshToken($email, $password)

@@ -11,5 +11,18 @@ class Item extends Model
 
     protected $table = "items";
 
-    protected $fillable = ['name', 'price', 'weight'];
+    protected $fillable = ['store_id','user_id','name', 'condition', 'weight'];
+
+    public function store()
+    {
+        return $this->belongsTo(Store::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

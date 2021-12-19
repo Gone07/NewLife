@@ -13,4 +13,9 @@ class Store extends Model
 
     protected $fillable = ['name', 'address', 'city', 'numberOfItems'];
 
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
+
 }

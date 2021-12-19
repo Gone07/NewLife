@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CommentRequest;
 use App\Http\Resources\CommentResource;
 use App\Models\Comment;
 use http\Env\Response;
@@ -22,20 +23,16 @@ class CommentController extends Controller
         return CommentResource::collection($comments);
     }
 
-    public function create()
+    public function store(CommentRequest $request)
     {
-        //
-    }
+        $comment = Comment::create([
+            'user_id' =>  auth()->user()->id,
+            'item_id' => $request->item_id,
+            'text' => $request->text
+        ]);
 
-    public function store(Request $request)
-    {
-        $comments = new Comment();
-        $comments->user = $request->user;
-        $comments->text = $request->text;
-        if($comments->save())
-        {
-            return response()->json($comments, 201);
-        }
+            return response()->json($comment, 201);
+
     }
 
     public function show($id)
@@ -44,20 +41,13 @@ class CommentController extends Controller
         return new CommentResource($comments);
     }
 
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
+    public function update(CommentRequest $request, $id)
     {
         $comments = Comment::findOrFail($id);
-        $comments->user = $request->user;
-        $comments->text = $request->text;
-        if($comments->save())
-        {
-            return new CommentResource($comments);
-        }
+        $comments->update([
+            'item_id' => $request->item_id,
+            'text' => $request->text
+        ]);
     }
 
     public function destroy($id)

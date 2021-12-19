@@ -27,6 +27,7 @@ Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login'])->name('login');
 Route::post('refresh', [AuthController::class, 'refreshToken']);
 Route::post('logout', [AuthController::class, 'logout'])->middleware('auth:api');
+Route::get('isAdmin', [AuthController::class, 'isAdmin'])->middleware('auth:api');
 
 //Post API
 Route::get('/posts', [PostController::class,'index']);
@@ -41,13 +42,17 @@ Route::post('/store',[StoreController::class,'store'])->middleware('auth:api');
 Route::get('/stores/{id}',[StoreController::class,'show'])->middleware('auth:api');
 Route::put('/stores/{id}',[StoreController::class,'update'])->middleware('auth:api');
 Route::delete('/stores/{id}',[StoreController::class,'destroy']);
+Route::get('/allStores',[StoreController::class,'indexAll']);
+
 
 //Items API
 Route::get('/items',[ItemController::class,'index']);
 Route::post('/item',[ItemController::class,'store'])->middleware('auth:api');
 Route::get('/items/{id}',[ItemController::class,'show'])->middleware('auth:api');
 Route::put('/items/{id}',[ItemController::class,'update'])->middleware('auth:api');
-Route::delete('/items/{id}',[ItemController::class,'destroy']);
+Route::delete('/items/{id}',[ItemController::class,'destroy'])->middleware('auth:api');
+Route::get('/myItems',[ItemController::class,'getUserItems'])->middleware('auth:api');
+Route::get('/store/{store_id}/items',[ItemController::class,'getStoreItems']);
 
 //Comments API
 Route::get('/comments',[CommentController::class,'index']);
@@ -55,3 +60,4 @@ Route::post('/comment',[CommentController::class,'store'])->middleware('auth:api
 Route::get('/comments/{id}',[CommentController::class,'show'])->middleware('auth:api');
 Route::put('/comments/{id}',[CommentController::class,'update'])->middleware('auth:api');
 Route::delete('/comments/{id}',[CommentController::class,'destroy']);
+
