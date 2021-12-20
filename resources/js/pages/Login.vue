@@ -56,7 +56,7 @@ export default {
                 this.ok = "Successful login!";
                 this.$router.push("/");
             } catch (error) {
-                this.error = "" + error;
+                this.error = "Wrong email password or user does not exist";
             }
         },
     },

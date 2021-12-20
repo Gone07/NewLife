@@ -93,7 +93,7 @@ export default {
                 );
                 this.$router.push("/item");
             } catch (error) {
-                this.error = "" + error;
+                this.error = "All fields must be filled";
             }
         },
     },

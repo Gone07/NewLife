@@ -101,7 +101,7 @@ export default {
                 );
                 this.$router.push("/stores");
             } catch (error) {
-                this.error = "" + error;
+                this.error = "All fields must be filled";
             }
         },
     },

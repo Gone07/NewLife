@@ -44,6 +44,7 @@
                                         name: 'editStore',
                                         params: { id: store.id },
                                     }"
+                                    ><i class="bi bi-pencil-square"></i
                                     >Edit</router-link
                                 >
                                 <a
