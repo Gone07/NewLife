@@ -26,13 +26,13 @@
                             class="nav-link"
                             to="/Item"
                             v-if="$store.state.auth.isLoggedIn"
-                            >Items</router-link
+                            >My items</router-link
                         >
                         <router-link
                             class="nav-link"
                             to="/Comment"
                             v-if="$store.state.auth.isLoggedIn"
-                            >Comments</router-link
+                            >My Comments</router-link
                         >
                     </div>
                     <div class="navbar-nav">

@@ -7,6 +7,9 @@
         >
             Create new item
         </router-link>
+        <router-link to="/stores" class="btn btn-primary my-2">
+            Go back
+        </router-link>
         <div class="row my-2">
             <div class="col-md-6 px-2" v-for="item in items" :key="item.id">
                 <div class="card mb-3">

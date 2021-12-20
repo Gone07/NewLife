@@ -5405,6 +5405,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -5511,6 +5514,9 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
 //
 //
 //
@@ -5697,6 +5703,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -5816,6 +5825,9 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
 //
 //
 //
@@ -6476,6 +6488,9 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
 //
 //
 //
@@ -31279,7 +31294,7 @@ var render = function () {
                     ? _c(
                         "router-link",
                         { staticClass: "nav-link", attrs: { to: "/Item" } },
-                        [_vm._v("Items")]
+                        [_vm._v("My items")]
                       )
                     : _vm._e(),
                   _vm._v(" "),
@@ -31287,7 +31302,7 @@ var render = function () {
                     ? _c(
                         "router-link",
                         { staticClass: "nav-link", attrs: { to: "/Comment" } },
-                        [_vm._v("Comments")]
+                        [_vm._v("My Comments")]
                       )
                     : _vm._e(),
                 ],
@@ -31394,192 +31409,206 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm.ok
-      ? _c("div", { staticClass: "alert alert-success" }, [
-          _vm._v("\n        " + _vm._s(_vm.ok) + "\n    "),
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.error
-      ? _c("div", { staticClass: "alert alert-danger" }, [
-          _vm._v("\n        " + _vm._s(_vm.error) + "\n    "),
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
-      _c("label", { staticClass: "form-label", attrs: { for: "NameInput" } }, [
-        _vm._v("Name"),
+  return _c(
+    "div",
+    [
+      _c(
+        "router-link",
+        { staticClass: "btn btn-primary my-2", attrs: { to: "/Item" } },
+        [_vm._v("\n        Go back\n    ")]
+      ),
+      _vm._v(" "),
+      _vm.ok
+        ? _c("div", { staticClass: "alert alert-success" }, [
+            _vm._v("\n        " + _vm._s(_vm.ok) + "\n    "),
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.error
+        ? _c("div", { staticClass: "alert alert-danger" }, [
+            _vm._v("\n        " + _vm._s(_vm.error) + "\n    "),
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "NameInput" } },
+          [_vm._v("Name")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.name,
+              expression: "name",
+            },
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text", id: "NameInput" },
+          domProps: { value: _vm.name },
+          on: {
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.name = $event.target.value
+            },
+          },
+        }),
       ]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.name,
-            expression: "name",
-          },
-        ],
-        staticClass: "form-control",
-        attrs: { type: "text", id: "NameInput" },
-        domProps: { value: _vm.name },
-        on: {
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.name = $event.target.value
-          },
-        },
-      }),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
-      _c(
-        "label",
-        { staticClass: "form-label", attrs: { for: "WeightInput" } },
-        [_vm._v("Weight")]
-      ),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.weight,
-            expression: "weight",
-          },
-        ],
-        staticClass: "form-control",
-        attrs: { type: "number", id: "WeightInput" },
-        domProps: { value: _vm.weight },
-        on: {
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.weight = $event.target.value
-          },
-        },
-      }),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
-      _c(
-        "label",
-        { staticClass: "form-label", attrs: { for: "ConditionInpute" } },
-        [_vm._v("Condition")]
-      ),
-      _vm._v(" "),
-      _c(
-        "select",
-        {
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "WeightInput" } },
+          [_vm._v("Weight")]
+        ),
+        _vm._v(" "),
+        _c("input", {
           directives: [
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.condition,
-              expression: "condition",
+              value: _vm.weight,
+              expression: "weight",
             },
           ],
-          staticClass: "form-select",
+          staticClass: "form-control",
+          attrs: { type: "number", id: "WeightInput" },
+          domProps: { value: _vm.weight },
           on: {
-            change: function ($event) {
-              var $$selectedVal = Array.prototype.filter
-                .call($event.target.options, function (o) {
-                  return o.selected
-                })
-                .map(function (o) {
-                  var val = "_value" in o ? o._value : o.value
-                  return val
-                })
-              _vm.condition = $event.target.multiple
-                ? $$selectedVal
-                : $$selectedVal[0]
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.weight = $event.target.value
             },
           },
-        },
-        [
-          _c("option", { attrs: { selected: "" } }, [
-            _vm._v("Chose condition"),
-          ]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "New" } }, [_vm._v("New")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "Very good" } }, [
-            _vm._v("Very good"),
-          ]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "Good" } }, [_vm._v("Good")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "Used" } }, [_vm._v("Used")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "Broken" } }, [_vm._v("Broken")]),
-        ]
-      ),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
-      _c(
-        "label",
-        { staticClass: "form-label", attrs: { for: "StoreInpute" } },
-        [_vm._v("Store")]
-      ),
+        }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "ConditionInpute" } },
+          [_vm._v("Condition")]
+        ),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.condition,
+                expression: "condition",
+              },
+            ],
+            staticClass: "form-select",
+            on: {
+              change: function ($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function (o) {
+                    return o.selected
+                  })
+                  .map(function (o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.condition = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              },
+            },
+          },
+          [
+            _c("option", { attrs: { selected: "" } }, [
+              _vm._v("Chose condition"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "New" } }, [_vm._v("New")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "Very good" } }, [
+              _vm._v("Very good"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "Good" } }, [_vm._v("Good")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "Used" } }, [_vm._v("Used")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "Broken" } }, [_vm._v("Broken")]),
+          ]
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "StoreInpute" } },
+          [_vm._v("Store")]
+        ),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.store_id,
+                expression: "store_id",
+              },
+            ],
+            staticClass: "form-select",
+            on: {
+              change: function ($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function (o) {
+                    return o.selected
+                  })
+                  .map(function (o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.store_id = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              },
+            },
+          },
+          [
+            _c("option", { attrs: { selected: "" } }, [
+              _vm._v("Chose store to post your item"),
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.stores, function (s) {
+              return _c("option", { key: s.id, domProps: { value: s.id } }, [
+                _vm._v(
+                  "\n                " + _vm._s(s.name) + "\n            "
+                ),
+              ])
+            }),
+          ],
+          2
+        ),
+      ]),
       _vm._v(" "),
       _c(
-        "select",
+        "button",
         {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.store_id,
-              expression: "store_id",
-            },
-          ],
-          staticClass: "form-select",
-          on: {
-            change: function ($event) {
-              var $$selectedVal = Array.prototype.filter
-                .call($event.target.options, function (o) {
-                  return o.selected
-                })
-                .map(function (o) {
-                  var val = "_value" in o ? o._value : o.value
-                  return val
-                })
-              _vm.store_id = $event.target.multiple
-                ? $$selectedVal
-                : $$selectedVal[0]
-            },
-          },
+          staticClass: "btn btn-primary",
+          attrs: { type: "submit" },
+          on: { click: _vm.create },
         },
-        [
-          _c("option", { attrs: { selected: "" } }, [
-            _vm._v("Chose store to post your item"),
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.stores, function (s) {
-            return _c("option", { key: s.id, domProps: { value: s.id } }, [
-              _vm._v("\n                " + _vm._s(s.name) + "\n            "),
-            ])
-          }),
-        ],
-        2
+        [_vm._v("\n        Submit\n    ")]
       ),
-    ]),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        staticClass: "btn btn-primary",
-        attrs: { type: "submit" },
-        on: { click: _vm.create },
-      },
-      [_vm._v("\n        Submit\n    ")]
-    ),
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -31604,145 +31633,159 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm.ok
-      ? _c("div", { staticClass: "alert alert-success" }, [
-          _vm._v("\n        " + _vm._s(_vm.ok) + "\n    "),
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.error
-      ? _c("div", { staticClass: "alert alert-danger" }, [
-          _vm._v("\n        " + _vm._s(_vm.error) + "\n    "),
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
-      _c("label", { staticClass: "form-label", attrs: { for: "NameInput" } }, [
-        _vm._v("Name"),
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.name,
-            expression: "name",
-          },
-        ],
-        staticClass: "form-control",
-        attrs: { type: "text", id: "NameInput" },
-        domProps: { value: _vm.name },
-        on: {
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.name = $event.target.value
-          },
-        },
-      }),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
+  return _c(
+    "div",
+    [
       _c(
-        "label",
-        { staticClass: "form-label", attrs: { for: "AddressInput" } },
-        [_vm._v("Address")]
+        "router-link",
+        { staticClass: "btn btn-primary my-2", attrs: { to: "/stores" } },
+        [_vm._v("\n        Go back\n    ")]
       ),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.address,
-            expression: "address",
+      _vm.ok
+        ? _c("div", { staticClass: "alert alert-success" }, [
+            _vm._v("\n        " + _vm._s(_vm.ok) + "\n    "),
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.error
+        ? _c("div", { staticClass: "alert alert-danger" }, [
+            _vm._v("\n        " + _vm._s(_vm.error) + "\n    "),
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "NameInput" } },
+          [_vm._v("Name")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.name,
+              expression: "name",
+            },
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text", id: "NameInput" },
+          domProps: { value: _vm.name },
+          on: {
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.name = $event.target.value
+            },
           },
-        ],
-        staticClass: "form-control",
-        attrs: { type: "text", id: "AddressInput" },
-        domProps: { value: _vm.address },
-        on: {
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.address = $event.target.value
-          },
-        },
-      }),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
-      _c("label", { staticClass: "form-label", attrs: { for: "CityInput" } }, [
-        _vm._v("City"),
+        }),
       ]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.city,
-            expression: "city",
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "AddressInput" } },
+          [_vm._v("Address")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.address,
+              expression: "address",
+            },
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text", id: "AddressInput" },
+          domProps: { value: _vm.address },
+          on: {
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.address = $event.target.value
+            },
           },
-        ],
-        staticClass: "form-control",
-        attrs: { type: "text", id: "CityInput" },
-        domProps: { value: _vm.city },
-        on: {
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.city = $event.target.value
-          },
-        },
-      }),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
-      _c(
-        "label",
-        { staticClass: "form-label", attrs: { for: "NumberInput" } },
-        [_vm._v("Max number of items")]
-      ),
+        }),
+      ]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.noi,
-            expression: "noi",
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "CityInput" } },
+          [_vm._v("City")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.city,
+              expression: "city",
+            },
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text", id: "CityInput" },
+          domProps: { value: _vm.city },
+          on: {
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.city = $event.target.value
+            },
           },
-        ],
-        staticClass: "form-control",
-        attrs: { type: "number", id: "NumberInput" },
-        domProps: { value: _vm.noi },
-        on: {
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.noi = $event.target.value
+        }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "NumberInput" } },
+          [_vm._v("Max number of items")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.noi,
+              expression: "noi",
+            },
+          ],
+          staticClass: "form-control",
+          attrs: { type: "number", id: "NumberInput" },
+          domProps: { value: _vm.noi },
+          on: {
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.noi = $event.target.value
+            },
           },
+        }),
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary",
+          attrs: { type: "submit" },
+          on: { click: _vm.create },
         },
-      }),
-    ]),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        staticClass: "btn btn-primary",
-        attrs: { type: "submit" },
-        on: { click: _vm.create },
-      },
-      [_vm._v("\n        Submit\n    ")]
-    ),
-  ])
+        [_vm._v("\n        Submit\n    ")]
+      ),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -31767,192 +31810,206 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm.ok
-      ? _c("div", { staticClass: "alert alert-success" }, [
-          _vm._v("\n        " + _vm._s(_vm.ok) + "\n    "),
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.error
-      ? _c("div", { staticClass: "alert alert-danger" }, [
-          _vm._v("\n        " + _vm._s(_vm.error) + "\n    "),
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
-      _c("label", { staticClass: "form-label", attrs: { for: "NameInput" } }, [
-        _vm._v("Name"),
+  return _c(
+    "div",
+    [
+      _c(
+        "router-link",
+        { staticClass: "btn btn-primary my-2", attrs: { to: "/Item" } },
+        [_vm._v("\n        Go back\n    ")]
+      ),
+      _vm._v(" "),
+      _vm.ok
+        ? _c("div", { staticClass: "alert alert-success" }, [
+            _vm._v("\n        " + _vm._s(_vm.ok) + "\n    "),
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.error
+        ? _c("div", { staticClass: "alert alert-danger" }, [
+            _vm._v("\n        " + _vm._s(_vm.error) + "\n    "),
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "NameInput" } },
+          [_vm._v("Name")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.name,
+              expression: "name",
+            },
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text", id: "NameInput" },
+          domProps: { value: _vm.name },
+          on: {
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.name = $event.target.value
+            },
+          },
+        }),
       ]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.name,
-            expression: "name",
-          },
-        ],
-        staticClass: "form-control",
-        attrs: { type: "text", id: "NameInput" },
-        domProps: { value: _vm.name },
-        on: {
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.name = $event.target.value
-          },
-        },
-      }),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
-      _c(
-        "label",
-        { staticClass: "form-label", attrs: { for: "WeightInput" } },
-        [_vm._v("Weight")]
-      ),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.weight,
-            expression: "weight",
-          },
-        ],
-        staticClass: "form-control",
-        attrs: { type: "number", id: "WeightInput" },
-        domProps: { value: _vm.weight },
-        on: {
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.weight = $event.target.value
-          },
-        },
-      }),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
-      _c(
-        "label",
-        { staticClass: "form-label", attrs: { for: "ConditionInpute" } },
-        [_vm._v("Condition")]
-      ),
-      _vm._v(" "),
-      _c(
-        "select",
-        {
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "WeightInput" } },
+          [_vm._v("Weight")]
+        ),
+        _vm._v(" "),
+        _c("input", {
           directives: [
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.condition,
-              expression: "condition",
+              value: _vm.weight,
+              expression: "weight",
             },
           ],
-          staticClass: "form-select",
+          staticClass: "form-control",
+          attrs: { type: "number", id: "WeightInput" },
+          domProps: { value: _vm.weight },
           on: {
-            change: function ($event) {
-              var $$selectedVal = Array.prototype.filter
-                .call($event.target.options, function (o) {
-                  return o.selected
-                })
-                .map(function (o) {
-                  var val = "_value" in o ? o._value : o.value
-                  return val
-                })
-              _vm.condition = $event.target.multiple
-                ? $$selectedVal
-                : $$selectedVal[0]
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.weight = $event.target.value
             },
           },
-        },
-        [
-          _c("option", { attrs: { selected: "" } }, [
-            _vm._v("Chose condition"),
-          ]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "New" } }, [_vm._v("New")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "Very good" } }, [
-            _vm._v("Very good"),
-          ]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "Good" } }, [_vm._v("Good")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "Used" } }, [_vm._v("Used")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "Broken" } }, [_vm._v("Broken")]),
-        ]
-      ),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
-      _c(
-        "label",
-        { staticClass: "form-label", attrs: { for: "StoreInpute" } },
-        [_vm._v("Store")]
-      ),
+        }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "ConditionInpute" } },
+          [_vm._v("Condition")]
+        ),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.condition,
+                expression: "condition",
+              },
+            ],
+            staticClass: "form-select",
+            on: {
+              change: function ($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function (o) {
+                    return o.selected
+                  })
+                  .map(function (o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.condition = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              },
+            },
+          },
+          [
+            _c("option", { attrs: { selected: "" } }, [
+              _vm._v("Chose condition"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "New" } }, [_vm._v("New")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "Very good" } }, [
+              _vm._v("Very good"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "Good" } }, [_vm._v("Good")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "Used" } }, [_vm._v("Used")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "Broken" } }, [_vm._v("Broken")]),
+          ]
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "StoreInpute" } },
+          [_vm._v("Store")]
+        ),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.store_id,
+                expression: "store_id",
+              },
+            ],
+            staticClass: "form-select",
+            on: {
+              change: function ($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function (o) {
+                    return o.selected
+                  })
+                  .map(function (o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.store_id = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              },
+            },
+          },
+          [
+            _c("option", { attrs: { selected: "" } }, [
+              _vm._v("Chose store to post your item"),
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.stores, function (s) {
+              return _c("option", { key: s.id, domProps: { value: s.id } }, [
+                _vm._v(
+                  "\n                " + _vm._s(s.name) + "\n            "
+                ),
+              ])
+            }),
+          ],
+          2
+        ),
+      ]),
       _vm._v(" "),
       _c(
-        "select",
+        "button",
         {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.store_id,
-              expression: "store_id",
-            },
-          ],
-          staticClass: "form-select",
-          on: {
-            change: function ($event) {
-              var $$selectedVal = Array.prototype.filter
-                .call($event.target.options, function (o) {
-                  return o.selected
-                })
-                .map(function (o) {
-                  var val = "_value" in o ? o._value : o.value
-                  return val
-                })
-              _vm.store_id = $event.target.multiple
-                ? $$selectedVal
-                : $$selectedVal[0]
-            },
-          },
+          staticClass: "btn btn-primary",
+          attrs: { type: "submit" },
+          on: { click: _vm.updated },
         },
-        [
-          _c("option", { attrs: { selected: "" } }, [
-            _vm._v("Chose store to post your item"),
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.stores, function (s) {
-            return _c("option", { key: s.id, domProps: { value: s.id } }, [
-              _vm._v("\n                " + _vm._s(s.name) + "\n            "),
-            ])
-          }),
-        ],
-        2
+        [_vm._v("\n        Submit\n    ")]
       ),
-    ]),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        staticClass: "btn btn-primary",
-        attrs: { type: "submit" },
-        on: { click: _vm.updated },
-      },
-      [_vm._v("\n        Submit\n    ")]
-    ),
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -31977,145 +32034,159 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm.ok
-      ? _c("div", { staticClass: "alert alert-success" }, [
-          _vm._v("\n        " + _vm._s(_vm.ok) + "\n    "),
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.error
-      ? _c("div", { staticClass: "alert alert-danger" }, [
-          _vm._v("\n        " + _vm._s(_vm.error) + "\n    "),
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
-      _c("label", { staticClass: "form-label", attrs: { for: "NameInput" } }, [
-        _vm._v("Name"),
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.name,
-            expression: "name",
-          },
-        ],
-        staticClass: "form-control",
-        attrs: { type: "text", id: "NameInput" },
-        domProps: { value: _vm.name },
-        on: {
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.name = $event.target.value
-          },
-        },
-      }),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
+  return _c(
+    "div",
+    [
       _c(
-        "label",
-        { staticClass: "form-label", attrs: { for: "AddressInput" } },
-        [_vm._v("Address")]
+        "router-link",
+        { staticClass: "btn btn-primary my-2", attrs: { to: "/stores" } },
+        [_vm._v("\n        Go back\n    ")]
       ),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.address,
-            expression: "address",
+      _vm.ok
+        ? _c("div", { staticClass: "alert alert-success" }, [
+            _vm._v("\n        " + _vm._s(_vm.ok) + "\n    "),
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.error
+        ? _c("div", { staticClass: "alert alert-danger" }, [
+            _vm._v("\n        " + _vm._s(_vm.error) + "\n    "),
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "NameInput" } },
+          [_vm._v("Name")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.name,
+              expression: "name",
+            },
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text", id: "NameInput" },
+          domProps: { value: _vm.name },
+          on: {
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.name = $event.target.value
+            },
           },
-        ],
-        staticClass: "form-control",
-        attrs: { type: "text", id: "AddressInput" },
-        domProps: { value: _vm.address },
-        on: {
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.address = $event.target.value
-          },
-        },
-      }),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
-      _c("label", { staticClass: "form-label", attrs: { for: "CityInput" } }, [
-        _vm._v("City"),
+        }),
       ]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.city,
-            expression: "city",
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "AddressInput" } },
+          [_vm._v("Address")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.address,
+              expression: "address",
+            },
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text", id: "AddressInput" },
+          domProps: { value: _vm.address },
+          on: {
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.address = $event.target.value
+            },
           },
-        ],
-        staticClass: "form-control",
-        attrs: { type: "text", id: "CityInput" },
-        domProps: { value: _vm.city },
-        on: {
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.city = $event.target.value
-          },
-        },
-      }),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
-      _c(
-        "label",
-        { staticClass: "form-label", attrs: { for: "NumberInput" } },
-        [_vm._v("Max number of items")]
-      ),
+        }),
+      ]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.noi,
-            expression: "noi",
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "CityInput" } },
+          [_vm._v("City")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.city,
+              expression: "city",
+            },
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text", id: "CityInput" },
+          domProps: { value: _vm.city },
+          on: {
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.city = $event.target.value
+            },
           },
-        ],
-        staticClass: "form-control",
-        attrs: { type: "number", id: "NumberInput" },
-        domProps: { value: _vm.noi },
-        on: {
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.noi = $event.target.value
+        }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "NumberInput" } },
+          [_vm._v("Max number of items")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.noi,
+              expression: "noi",
+            },
+          ],
+          staticClass: "form-control",
+          attrs: { type: "number", id: "NumberInput" },
+          domProps: { value: _vm.noi },
+          on: {
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.noi = $event.target.value
+            },
           },
+        }),
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary",
+          attrs: { type: "submit" },
+          on: { click: _vm.create },
         },
-      }),
-    ]),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        staticClass: "btn btn-primary",
-        attrs: { type: "submit" },
-        on: { click: _vm.create },
-      },
-      [_vm._v("\n        Submit\n    ")]
-    ),
-  ])
+        [_vm._v("\n        Submit\n    ")]
+      ),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -32140,9 +32211,21 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Home")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticStyle: {} }, [
+      _c("br"),
+      _vm._v(
+        "\n    There is an old saying, “Everything has its place.” Go into any suburban\n    home in post-modern day era, and you most likely will find a basement,\n    an attic, a closet, a garage, or even a shed full of items which have\n    outlasted their initial use. It seems that most households in America\n    will replace their ell phone every six months, a kitchen appliance once\n    a year, and then there is the question of what to do that occasional\n    oddball item which someone may give us as a gift, yet serves no\n    immediate purpose in our household.\n"
+      ),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -32690,6 +32773,12 @@ var render = function () {
             [_vm._v("\n        Create new item\n    ")]
           )
         : _vm._e(),
+      _vm._v(" "),
+      _c(
+        "router-link",
+        { staticClass: "btn btn-primary my-2", attrs: { to: "/stores" } },
+        [_vm._v("\n        Go back\n    ")]
+      ),
       _vm._v(" "),
       _c(
         "div",

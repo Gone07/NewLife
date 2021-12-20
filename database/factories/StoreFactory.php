@@ -17,7 +17,7 @@ class StoreFactory extends Factory
             'name'  => $this->faker->text(10),
             'address'   => $this->faker->text(10),
             'city'   => $this->faker->text(10),
-            'numberOfItems'   => $this->faker->numberBetween(100)
+            'numberOfItems'   => $this->faker->numberBetween(50,10000),
         ];
     }
 }

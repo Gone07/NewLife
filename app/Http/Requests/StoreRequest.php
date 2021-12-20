@@ -27,7 +27,7 @@ class StoreRequest extends FormRequest
             'name' => 'required|max:255',
             'address' => 'required|max:255',
             'city' => 'required|max:255',
-            'numberOfItems' => 'required|integer|max:1000',
+            'numberOfItems' => 'required|integer|max:10000',
         ];
     }
 }

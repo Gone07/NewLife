@@ -1,5 +1,8 @@
 <template>
     <div>
+        <router-link to="/stores" class="btn btn-primary my-2">
+            Go back
+        </router-link>
         <div v-if="ok" class="alert alert-success">
             {{ ok }}
         </div>
