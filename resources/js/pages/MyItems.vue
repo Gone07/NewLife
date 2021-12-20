@@ -31,6 +31,7 @@
                                         name: 'editItem',
                                         params: { id: item.id },
                                     }"
+                                    ><i class="bi bi-pencil-square"></i
                                     >Edit</router-link
                                 >
                                 <a

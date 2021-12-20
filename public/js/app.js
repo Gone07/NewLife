@@ -6288,6 +6288,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -6488,6 +6489,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
 //
 //
 //
@@ -32220,9 +32222,16 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticStyle: {} }, [
       _c("br"),
-      _vm._v(
-        "\n    There is an old saying, “Everything has its place.” Go into any suburban\n    home in post-modern day era, and you most likely will find a basement,\n    an attic, a closet, a garage, or even a shed full of items which have\n    outlasted their initial use. It seems that most households in America\n    will replace their ell phone every six months, a kitchen appliance once\n    a year, and then there is the question of what to do that occasional\n    oddball item which someone may give us as a gift, yet serves no\n    immediate purpose in our household.\n"
-      ),
+      _vm._v(" "),
+      _c("div", [
+        _vm._v(
+          "\n        There is an old saying, “Everything has its place.” Go into any\n        suburban home in post-modern day era, and you most likely will find\n        a basement, an attic, a closet, a garage, or even a shed full of\n        items which have outlasted their initial use. It seems that most\n        households in America will replace their ell phone every six months,\n        a kitchen appliance once a year, and then there is the question of\n        what to do that occasional oddball item which someone may give us as\n        a gift, yet serves no immediate purpose in our household.\n    "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("div", [_vm._v("Good luck finding NewLife for you items!")]),
     ])
   },
 ]
@@ -32542,7 +32551,10 @@ var render = function () {
                             },
                           },
                         },
-                        [_vm._v("Edit")]
+                        [
+                          _c("i", { staticClass: "bi bi-pencil-square" }),
+                          _vm._v("Edit"),
+                        ]
                       ),
                       _vm._v(" "),
                       _c(
@@ -32834,7 +32846,10 @@ var render = function () {
                                 },
                               },
                             },
-                            [_vm._v("Edit")]
+                            [
+                              _c("i", { staticClass: "bi bi-pencil-square" }),
+                              _vm._v("Edit"),
+                            ]
                           )
                         : _vm._e(),
                       _vm._v(" "),
